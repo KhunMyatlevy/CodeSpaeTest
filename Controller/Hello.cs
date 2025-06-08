@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using  MyApiApp.Data;
+using MyApiApp.Data;
 using MyApiApp.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyApiApp.Controllers
 {
@@ -15,13 +16,7 @@ namespace MyApiApp.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public IActionResult SayHello()
-        {
-            return Ok(new { message = "Hello from API!" });
-        }
-
-        [HttpPost]
+        [HttpPost(Name = "AddStudent")]
         public async Task<IActionResult> AddStudent([FromBody] Student student)
         {
             if (student == null || string.IsNullOrWhiteSpace(student.Name))
@@ -35,7 +30,7 @@ namespace MyApiApp.Controllers
             return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, student);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetStudent")]
         public async Task<IActionResult> GetStudent(int id)
         {
             var student = await _context.Students.FindAsync(id);
@@ -43,6 +38,11 @@ namespace MyApiApp.Controllers
             return Ok(student);
         }
 
-        
+        [HttpGet(Name = "GetAllStudents")]
+        public async Task<IActionResult> GetAllStudents()
+        {
+            var students = await _context.Students.ToListAsync();
+            return Ok(students);
+        }
     }
 }
