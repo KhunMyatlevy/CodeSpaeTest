@@ -26,8 +26,8 @@ namespace MyApiApp.Controllers
 
             await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
+            return Ok(new { message = "Student added successfully." });
 
-            return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, student);
         }
 
         [HttpGet("{id}", Name = "GetStudent")]
