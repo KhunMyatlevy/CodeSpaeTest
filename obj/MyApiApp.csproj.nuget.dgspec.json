@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj": {}
+    "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj": {
+    "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj",
         "projectName": "MyApiApp",
-        "projectPath": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj",
-        "packagesPath": "C:\\Users\\EzBook X5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\obj\\",
+        "projectPath": "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\EzBook X5\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
