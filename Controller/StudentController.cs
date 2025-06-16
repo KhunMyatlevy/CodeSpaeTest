@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyApiApp.Data;
 using MyApiApp.Model;
 using Microsoft.EntityFrameworkCore;
-
+using MyApiApp.DTO;
 namespace MyApiApp.Controllers
 {
     [ApiController]
@@ -43,6 +43,34 @@ namespace MyApiApp.Controllers
         {
             var students = await _context.Students.ToListAsync();
             return Ok(students);
+        }
+
+        [HttpPut(Name = "UpdateStudent")]
+        public async Task<IActionResult> UpdateStudent([FromBody] StudentUpadateRequest request, int Id)
+        {
+            var student = await _context.Students.FindAsync(Id);
+            if(student == null)
+            {
+                return NotFound();
+            }
+            student.Name = request.Name;
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Student updated successfully." });
+        }
+
+        [HttpDelete("{id}", Name = "DeleteStudent")]
+        public async Task<IActionResult> DeleteStudent(int id)
+        {
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
+            {
+                return NotFound(new { message = "Student not found." });
+            }
+
+            _context.Students.Remove(student);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Student deleted successfully." });
         }
     }
 }
