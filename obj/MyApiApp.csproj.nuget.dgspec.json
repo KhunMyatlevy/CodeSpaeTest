@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj": {}
+    "/workspaces/CodeSpaeTest/MyApiApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj": {
+    "/workspaces/CodeSpaeTest/MyApiApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj",
+        "projectUniqueName": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
         "projectName": "MyApiApp",
-        "projectPath": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\MyApiApp.csproj",
-        "packagesPath": "C:\\Users\\EzBook X5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EzBook X5\\Downloads\\DotNet Project\\MyApiApp\\obj\\",
+        "projectPath": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CodeSpaeTest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\EzBook X5\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
