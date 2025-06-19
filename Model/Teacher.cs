@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace MyApiApp.Model
 {
-    public class Student
+    public class Teacher
     {
         public int Id { get; set; }
-        public string Name { get; set; } 
+        public string Name { get; set; }
     }
 }
