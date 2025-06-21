@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-    "/workspaces/CodeSpaeTest/MyApiApp.csproj": {}
-  },
-  "projects": {
-    "/workspaces/CodeSpaeTest/MyApiApp.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
-        "projectName": "MyApiApp",
-        "projectPath": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/CodeSpaeTest/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
->>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -102,11 +85,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
->>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
         }
       }
     }

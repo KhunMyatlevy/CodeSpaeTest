@@ -3361,16 +3361,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\user\\.nuget\\packages\\": {}
-=======
-    "/home/codespace/.nuget/packages/": {}
->>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj",
       "projectName": "MyApiApp",
       "projectPath": "C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\MyApiApp.csproj",
@@ -3379,16 +3374,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
-      "projectName": "MyApiApp",
-      "projectPath": "/workspaces/CodeSpaeTest/MyApiApp.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/CodeSpaeTest/obj/",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
->>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3459,12 +3444,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
->>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\user\\Documents\\vexzy\\CodeSpaeTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
