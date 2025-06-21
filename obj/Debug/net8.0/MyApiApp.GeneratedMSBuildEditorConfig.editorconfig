@@ -17,11 +17,19 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyApiApp
 build_property.RootNamespace = MyApiApp
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\user\Documents\vexzy\CodeSpaeTest\
+=======
+build_property.ProjectDir = /workspaces/CodeSpaeTest/
+>>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\user\Documents\vexzy\CodeSpaeTest
+=======
+build_property.MSBuildProjectDirectory = /workspaces/CodeSpaeTest
+>>>>>>> d7aa20327541e1069b9e291f44cb861d3827a38f
 build_property._RazorSourceGeneratorDebug = 
