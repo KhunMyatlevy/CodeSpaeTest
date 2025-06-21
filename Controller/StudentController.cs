@@ -3,6 +3,7 @@ using MyApiApp.Data;
 using MyApiApp.Model;
 using Microsoft.EntityFrameworkCore;
 using MyApiApp.DTO;
+
 namespace MyApiApp.Controllers
 {
     [ApiController]
@@ -17,17 +18,24 @@ namespace MyApiApp.Controllers
         }
 
         [HttpPost(Name = "AddStudent")]
-        public async Task<IActionResult> AddStudent([FromBody] Student student)
+        public async Task<IActionResult> AddStudent([FromBody] SaveStudnetRequest request)
         {
-            if (student == null || string.IsNullOrWhiteSpace(student.Name))
+            if (request == null || string.IsNullOrWhiteSpace(request.Name))
             {
                 return BadRequest("Student name is required.");
             }
 
+            // Map DTO to Entity
+            var student = new Student
+            {
+                Name = request.Name,
+                Grade = request.Grade
+            };
+
             await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
-            return Ok(new { message = "Student added successfully." });
 
+            return Ok(new { message = "Student added successfully." });
         }
 
         [HttpGet("{id}", Name = "GetStudent")]
