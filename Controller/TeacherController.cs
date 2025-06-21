@@ -49,24 +49,38 @@ namespace MyApiApp.Controllers
             return Ok(teachers);
          }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTeacher([FromBody] TeacherUpadateRequest request, int id)
+        [HttpPut("updateByName/{name}", Name = "UpdateTeacherByName")]
+        public async Task<IActionResult> UpdateTeacherByName(string name, [FromBody] TeacherUpadateRequest request)
         {
-            var teacher = await _context.Teachers.FindAsync(id);
+            if (string.IsNullOrWhiteSpace(name))
+            {
+               return BadRequest(new { message = "Name is required to update teacher" });  
+            }
+
+            var teacher = await _context.Teachers.FirstOrDefaultAsync(t => t.Name == name);
+
             if (teacher == null)
             {
-                return NotFound();
-             }
+                return NotFound(new { message = "Teacher not found." });
+            }
 
-             teacher.Name = request.Name;
+            teacher.Name = request.Name;
             await _context.SaveChangesAsync();
+
+
             return Ok(new { message = "Teacher updated successfully" });
         }
 
-        [HttpDelete("{id}", Name = "DeleteTeacher")]
-        public async Task<IActionResult> DeleteTeacher(int id)
+        [HttpDelete("deleteByName/{name}", Name = "DeleteTeacherByName")]
+        public async Task<IActionResult> DeleteTeacherByName(string name)
         {
-            var teacher = await _context.Teachers.FindAsync(id);
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return BadRequest(new { message = "Name is required to delete teacher" });
+            }
+
+            var teacher = await _context.Teachers.FirstOrDefaultAsync(t => t.Name == name);
+            
             if (teacher == null)
             {
                 return NotFound(new { message = "Teacher not found" });
