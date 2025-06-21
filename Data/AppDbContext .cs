@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using MyApiApp.Model;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace MyApiApp.Data
 {
     public class AppDbContext : DbContext
@@ -15,6 +14,7 @@ namespace MyApiApp.Data
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<Staff>   Staff    { get; set; }   // ← NEW
+        public DbSet<Staff>   Staff    { get; set; } 
+        public DbSet<Parent> Parent    { get; set; } 
     }
 }
