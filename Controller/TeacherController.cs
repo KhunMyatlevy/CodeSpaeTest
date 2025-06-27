@@ -12,23 +12,30 @@ namespace MyApiApp.Controllers
     {
         private readonly AppDbContext _context;
 
-       public TeacherController(AppDbContext context)
+        public TeacherController(AppDbContext context)
         {
-              _context = context;
+            _context = context;
         }
 
         [HttpPost(Name = "AddTeacher")]
-        public async Task<IActionResult> AddTeacher([FromBody] Teacher teacher)
+        public async Task<IActionResult> AddTeacher([FromBody] SaveTeacherRequest request)
         {
-            if (teacher == null || string.IsNullOrWhiteSpace(teacher.Name))
+            if (request == null || string.IsNullOrWhiteSpace(request.Name))
             {
-               return BadRequest("Teacher name is required");
+                return BadRequest("Teacher name is required");
             }
+
+            var teacher = new Teacher
+            {
+                Name = request.Name,
+                subject = request.Subject
+            };
 
             await _context.Teachers.AddAsync(teacher);
             await _context.SaveChangesAsync();
+
             return Ok(new { message = "Teacher added successfully" });
-         }
+        }
 
         [HttpGet("{id}", Name = "GetTeacher")]
         public async Task<IActionResult> GetTeacher(int id)
@@ -47,14 +54,14 @@ namespace MyApiApp.Controllers
         {
             var teachers = await _context.Teachers.ToListAsync();
             return Ok(teachers);
-         }
+        }
 
         [HttpPut("updateByName/{name}", Name = "UpdateTeacherByName")]
         public async Task<IActionResult> UpdateTeacherByName(string name, [FromBody] TeacherUpadateRequest request)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-               return BadRequest(new { message = "Name is required to update teacher" });  
+                return BadRequest(new { message = "Name is required to update teacher" });
             }
 
             var teacher = await _context.Teachers.FirstOrDefaultAsync(t => t.Name == name);
@@ -80,7 +87,7 @@ namespace MyApiApp.Controllers
             }
 
             var teacher = await _context.Teachers.FirstOrDefaultAsync(t => t.Name == name);
-            
+
             if (teacher == null)
             {
                 return NotFound(new { message = "Teacher not found" });
@@ -90,14 +97,14 @@ namespace MyApiApp.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Teacher deleted successfully" });
-       }
+        }
 
-       [HttpGet("search")]
-       public async Task<IActionResult> SearchTeacherByName(string name)
-       {
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchTeacherByName(string name)
+        {
             if (string.IsNullOrWhiteSpace(name))
             {
-                return BadRequest(new { message = "Name is required for searching"});
+                return BadRequest(new { message = "Name is required for searching" });
             }
 
             var teachers = await _context.Teachers
@@ -110,6 +117,26 @@ namespace MyApiApp.Controllers
             }
 
             return Ok(teachers);
-       }
+        }
+
+        [HttpGet("searchBySubject")]
+        public async Task<IActionResult> SearchTeacherBySubject([FromQuery] string subject)
+        {
+            if (string.IsNullOrWhiteSpace(subject))
+            {
+                return BadRequest(new { message = "Subject is required for searching" });
+            }
+
+            var teachers = await _context.Teachers
+            .Where(t => t.subject.Contains(subject))
+            .ToListAsync();
+
+            if (teachers == null || teachers.Count == 0)
+            {
+                return NotFound(new { message = "No teachers found with given subject" });
+            }
+
+            return Ok(teachers);
+        }
     }
 }

@@ -25,7 +25,6 @@ namespace MyApiApp.Controllers
                 return BadRequest("Student name is required.");
             }
 
-            // Map DTO to Entity
             var student = new Student
             {
                 Name = request.Name,
